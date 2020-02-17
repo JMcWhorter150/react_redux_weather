@@ -4,8 +4,7 @@ import WeatherCard from '../containers/WeatherCardContainer'
 
 export default function WeatherApp( {
     handleNext,
-    handleLast,
-    handleGetWeather
+    handleLast
 } ) {
     return (
         <div>
@@ -13,7 +12,6 @@ export default function WeatherApp( {
             <WeatherCard />
             <br />
             <button onClick={handleNext}>Next</button>
-            <button onClick={handleGetWeather}>Get Weather</button>
             <button onClick={handleLast}>Last</button>
         </div>
     );
