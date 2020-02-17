@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App App-header">
       <Provider store={store}>
-
+        
       </Provider>
 
     </div>
