@@ -6,6 +6,7 @@ import weather from './reducers';
 import WeatherApp from './containers/WeatherAppContainer';
 
 const store = createStore(weather);
+window.store = store;
 
 function App() {
   return (
@@ -13,7 +14,6 @@ function App() {
       <Provider store={store}>
         <WeatherApp />
       </Provider>
-
     </div>
   );
 }

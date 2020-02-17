@@ -25,6 +25,6 @@ export default class WeatherInput extends React.Component {
 
     _handleSubmit = (event) => {
         event.preventDefault();
-        this.props._handleSubmit(event.target.value);
+        this.props._handleSubmit(this.state.city);
     }
 }

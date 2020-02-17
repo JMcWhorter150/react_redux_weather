@@ -17,9 +17,8 @@ export default function WeatherCard({
                 <li>Time: {time}</li>
                 <li>High: {highTemp} °F</li>
                 <li>Low: {lowTemp} °F</li>
-                <li>Humidity: {humidity}%</li>
                 <li>Weather: {weather}</li>
-                <li>{description}</li>
+                <li>Description: {description}</li>
                 <li>Wind: {wind} mph</li>
             </ul>
             :

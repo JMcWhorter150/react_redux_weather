@@ -12,16 +12,27 @@ export default function weather(state=defaultState, action) {
 
     switch (action.type) {
         case NEXT:
-            newState.currentWeather = state.totalWeatherData[state.currentWeatherIndex + 1 > 39 ? 39 : state.currentWeatherIndex + 1];
-            break;
+            if (state.currentWeatherIndex === 39) {
+                break;
+            } else {
+                newState.currentWeather = state.totalWeatherData[state.currentWeatherIndex + 1];
+                newState.currentWeatherIndex = state.currentWeatherIndex + 1
+                break;
+            }
         case LAST:
-            newState.currentWeather = state.totalWeatherData[state.currentWeatherIndex - 1 < 0 ? 0 : state.currentWeatherIndex - 1];
-            break;
+            if (state.currentWeatherIndex === 0) {
+                break;
+            } else {
+                newState.currentWeather = state.totalWeatherData[state.currentWeatherIndex - 1];
+                newState.currentWeatherIndex = state.currentWeatherIndex - 1;
+                break;
+            }
         case SET_CITY:
             newState.city = action.payload;
             break;
         case GET_WEATHER:
             newState.totalWeatherData = action.payload;
+            newState.currentWeather = newState.totalWeatherData[newState.currentWeatherIndex];
             break;
         default:
             break;
