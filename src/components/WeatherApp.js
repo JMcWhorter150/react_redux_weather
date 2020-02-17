@@ -1,14 +1,20 @@
 import React from 'react';
 import WeatherInput from '../containers/WeatherInputContainer';
+import WeatherCard from '../containers/WeatherCardContainer'
 
-export default function WeatherApp() {
+export default function WeatherApp( {
+    handleNext,
+    handleLast,
+    handleGetWeather
+} ) {
     return (
         <div>
             <WeatherInput />
             <WeatherCard />
             <br />
-            <button>Next</button>
-            <button>Last</button>
+            <button onClick={handleNext}>Next</button>
+            <button onClick={handleGetWeather}>Get Weather</button>
+            <button onClick={handleLast}>Last</button>
         </div>
     );
 }
